@@ -1,9 +1,20 @@
+@font-face {
+    font-family: "LCD Monospace";
+    src : url(LCDMB___.TTF);
+}
+
 body {
     width: 100%;
     height: 100%;
     margin : 0px;
     padding : 0px;
+    font-family: "LCD Monospace";
+    color: Gold;
+    background-color: Black;
+    }
 
+table td {
+    /* font-size: 12em !important; */
     }
 
 .left {
