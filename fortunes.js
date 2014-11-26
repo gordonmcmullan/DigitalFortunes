@@ -1,6 +1,7 @@
 var FF = {};
 
 FF.wrong_count = 0;
+FF.headtohead = 0;
 FF.score = 0;
 FF.team_a_score = parseInt($().url().param('a')) || 0;
 FF.team_b_score = parseInt($().url().param('b')) || 0;
@@ -51,16 +52,19 @@ $(document).keyup(function () {
         };
     
     if (n >= 1 && n <= FF.tableRows) {
-        a = '#a' + n;
-        s = '#s' + n;
-        if ($(a).hasClass('hidden')) {
-            $('#ding').trigger('play');
-            $(a).removeClass('hidden');
-            $(s).removeClass('hidden');
-            FF.score += FF.roundFinished ? 0 : parseInt($(s).text());
-            $('#totalScore').text(FF.score);
-            if (FF.wrong_count === 3) {
-                awardWinners();
+        if (FF.playing_team || FF.headtohead < 2) {
+            FF.headtohead += 1;
+            a = '#a' + n;
+            s = '#s' + n;
+            if ($(a).hasClass('hidden')) {
+                $('#ding').trigger('play');
+                $(a).removeClass('hidden');
+                $(s).removeClass('hidden');
+                FF.score += FF.roundFinished ? 0 : parseInt($(s).text());
+                $('#totalScore').text(FF.score);
+                if (FF.wrong_count === 3) {
+                    awardWinners();
+                }
             }
         }
     }
