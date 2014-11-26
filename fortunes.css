@@ -1,0 +1,45 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin : 0px;
+    padding : 0px;
+
+    }
+
+.left {
+     float: left;   
+}
+
+.right {
+    float: right;   
+}
+
+
+.centrered {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.hidden {
+    visibility: hidden;
+}
+table.answers {
+    width: 60%;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+table.small_x {
+    height : 100%;
+    width : 10%;
+    vertical-align : middle;
+
+}
+table.big_x {
+    height : 100%;
+    width : 10%;
+    vertical-align : middle;
+}
+            
