@@ -1,16 +1,17 @@
 var FF = {};
-
+FF.answewrcount = 0;
 FF.wrong_count = 0;
 FF.headtohead = 0;
 FF.score = 0;
 FF.team_a_score = parseInt($().url().param('a')) || 0;
 FF.team_b_score = parseInt($().url().param('b')) || 0;
+FF.question_number = parseInt($().url().attr('file'));
 FF.tableRows = $('table.answers tr').length - 1;
 FF.playing_team = '';
 FF.roundFinished = false;
 
-$('#team_A').text(FF.team_a_score);
-$('#team_B').text(FF.team_b_score);
+$('#team_A_score').text(FF.team_a_score);
+$('#team_B_score').text(FF.team_b_score);
 
 
 
@@ -42,10 +43,10 @@ $(document).keyup(function () {
         awardWinners = function () {
             if (FF.playing_team === 'a') {
                 FF.team_a_score += FF.score;
-                $('#team_A').text(FF.team_a_score);
+                $('#team_A_score').text(FF.team_a_score);
             } else {
                 FF.team_b_score += FF.score;
-                $('#team_B').text(FF.team_b_score);
+                $('#team_B_score').text(FF.team_b_score);
             }
             FF.roundFinished = true;
             //$('#totalScore').addClass('hidden');
@@ -57,12 +58,16 @@ $(document).keyup(function () {
             a = '#a' + n;
             s = '#s' + n;
             if ($(a).hasClass('hidden')) {
+                FF.answewrcount += 1;
                 $('#ding').trigger('play');
                 $(a).removeClass('hidden');
                 $(s).removeClass('hidden');
                 FF.score += FF.roundFinished ? 0 : parseInt($(s).text());
                 $('#totalScore').text(FF.score);
-                if (FF.wrong_count === 3) {
+                if (!FF.roundFinished && FF.answewrcount === FF.tableRows) {
+                    awardWinners();
+                }
+                if (!FF.roundFinished && FF.wrong_count === 3) {
                     awardWinners();
                 }
             }
@@ -99,5 +104,12 @@ $(document).keyup(function () {
         $('table#big_x').removeClass('right');
         $('table#big_x').addClass('left');
         
+    }
+    
+    if (FF.roundFinished && event.keyCode === 13) {
+        
+        window.console.log("enter Pressed");
+        var next_question_number = FF.question_number + 1;
+        window.location = next_question_number + ".html?" + "a=" + FF.team_a_score + "&b=" + FF.team_b_score;
     }
 });

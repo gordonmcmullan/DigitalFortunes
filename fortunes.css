@@ -4,17 +4,20 @@
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    /*width: 100%;
+    height: 100%;*/
     margin : 0px;
-    padding : 0px;
+    padding : 6px;
     font-family: "LCD Monospace";
+    font-size: 4em;
     color: Gold;
     background-color: Black;
     }
 
+
+
 table td {
-    /* font-size: 12em !important; */
+    font-size: 5em !important;
     }
 
 .left {
@@ -35,22 +38,56 @@ table td {
 .hidden {
     visibility: hidden;
 }
+
+.tenpercent {
+    width : 10%;
+}
+
+.twentypercent {
+    width : 20%;
+}
+
+.bigtext {
+    font-size: inherit;
+    text-align: center;
+
+}
+
+.teamscore {
+    width: 50%
+}
+
+.score {
+    text-align : right;
+}
+
+.teamplaying {
+    text-align: center;
+    font-size: 3em;
+    width: 50%;
+    height: 84px;
+    margin-top : -56px;
+}
+
 table.answers {
     width: 60%;
-    height: 100%;
+    height: 90%;
     vertical-align: middle;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0px;
+    margin-right: 0px;
 }
+
+
 table.small_x {
-    height : 100%;
-    width : 10%;
+    height : 90%;
+    width : 100%;
     vertical-align : middle;
+    text-align: center;
 
 }
 table.big_x {
     height : 100%;
-    width : 10%;
+    width : 100%;
     vertical-align : middle;
 }
             
