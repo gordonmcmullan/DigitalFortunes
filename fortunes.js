@@ -99,10 +99,9 @@ $(document).keyup(function () {
         playTeam('b');
         
         // Swap wrong answer tables to other side
-        $('table#small_x').removeClass('left');
-        $('table#small_x').addClass('right');
-        $('table#big_x').removeClass('right');
-        $('table#big_x').addClass('left');
+        console.log($("#small_x"));
+        $('#small_x').appendTo($("#team_B_wrong"));
+        $('#big_x').appendTo('#team_A_wrong');
         
     }
     
