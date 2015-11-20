@@ -7,54 +7,11 @@
         
     </head>
     <body>
-        
-        <div class="left twentypercent">
-            <div style="width: 100%; height: 10%">
-                <div class='left teamscore' id='team_A_score'>0</div><div id='team_a_playing' class='hidden right bigtext teamplaying'>*</div>
-            </div>
-            <div id='team_A_wrong' style="height: 90%">
-                <table id='small_x' class='small_x'>
-                    <tr><td id='small_x1' class="smallx hidden">X</td></tr>
-                    <tr><td id='small_x2' class="smallx hidden">X</td></tr>
-                    <tr><td id='small_x3' class="smallx hidden">X</td></tr>
-                </table>
-            </div>
-        </div>
-        
-        <div class="right twentypercent">    
-            <div style="width: 100%; height: 10%">
-                <div id='team_b_playing' class='hidden left bigtext teamplaying'>*</div><div id='team_B_score' class='right teamscore'>0</div>
-            </div>
-            <div id="team_B_wrong" style="height: 90%">
-                <table id='big_x' class='big_x hidden bigtext'>
-                    <tr><td>X</td></tr>
-                </table>
-            </div>
-        </div>
+       <table class="answers" style="horizontal-align: centre" width="100%">
+           <tr><td style="text-align: center">Team A</td><td><div id='team_A_score'>0</div></td></tr>
+           <tr><td style="text-align: center">Team B</td><td><div id='team_B_score'>0</div></td></tr>
+        </table>
+                <script type="application/javascript" src="fortunes.js"></script>
 
-        
-        
-        <div style="width : 100%; height: 90vh; clear none">
-            <table class='answers'>
-                <tr><td>1</td><td id='a1' class='hidden'>No</td><td id='s1' class='hidden score tenpercent'>41</td></tr>
-                <tr><td>2</td><td id='a2' class='hidden'>James Harding</td><td id='s2' class='hidden score tenpercent'>21</td></tr>
-                <tr><td>3</td><td id='a3' class='hidden'>Robert Thompson</td><td id='s3' class='hidden score tenpercent'>10</td></tr>
-                <tr><td>4</td><td id='a4' class='hidden'>William Rees-Mogg</td><td id='s4' class='hidden score tenpercent'>7</td></tr>
-                <tr><td></td><td>Total</td><td id='totalScore' class="score tenpercent">0</td></tr>
-            </table>
-        </div>
-
-
-
-        <audio id='uhuh' class="hidden">
-            <source src='UhUh.mp3'>
-        </audio>
-
-        <audio id='ding' class="hidden">
-            <source src='ding.mp3'>
-        </audio>
-
-        <script type="application/javascript" src="fortunes.js"></script>
-         
     </body>
 </html>

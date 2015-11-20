@@ -38,6 +38,7 @@ $(document).keyup(function () {
             FF.playing_team = team;
             $(stop_team).addClass('hidden');
             $(start_team).removeClass('hidden');
+            //$('#ding').trigger('play');
         },
     
         awardWinners = function () {
